@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Src/new_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Src/Font.tres" type="DynamicFont" id=2]
+
+[node name="Title" type="Label"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -89.0
+margin_right = 89.0
+margin_bottom = 65.0
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Title
+"
+align = 1

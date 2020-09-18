@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Src/Restart.gd" type="Script" id=1]
+
+[node name="RETRY" type="Button"]
+margin_left = 781.0
+margin_top = 410.0
+margin_right = 1286.0
+margin_bottom = 452.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Retry"
+script = ExtResource( 1 )
+[connection signal="button_up" from="." to="." method="_on_RETRY_button_up"]

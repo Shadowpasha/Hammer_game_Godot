@@ -1,0 +1,174 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Src/StartScreen.tres" type="Theme" id=1]
+[ext_resource path="res://start-assets/sky.png" type="Texture" id=2]
+[ext_resource path="res://Levels/TextureRect.gd" type="Script" id=3]
+[ext_resource path="res://start-assets/Hammer (4) (2).png" type="Texture" id=4]
+[ext_resource path="res://Src/Title.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Src/Changescene.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Rotate"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -180.0, -360.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 180.0, 360.0 ]
+}
+
+[node name="Mainscreen" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+editor/display_folded = true
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -960.0
+margin_top = -182.0
+margin_right = 960.0
+script = ExtResource( 3 )
+
+[node name="Hammer (4) (2)2" type="Sprite" parent="TextureRect"]
+position = Vector2( 100, 88 )
+texture = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect/Hammer (4) (2)2"]
+autoplay = "Rotate"
+anims/Rotate = SubResource( 1 )
+
+[node name="Hammer (4) (2)" type="Sprite" parent="TextureRect"]
+position = Vector2( 1815, 84.0001 )
+texture = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect/Hammer (4) (2)"]
+autoplay = "Rotate"
+anims/Rotate = SubResource( 2 )
+
+[node name="Title" parent="." instance=ExtResource( 5 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -230.5
+margin_top = -213.0
+margin_right = 230.5
+margin_bottom = -57.0
+text = "Level Select
+"
+valign = 1
+autowrap = true
+
+[node name="Change Scene" parent="." instance=ExtResource( 6 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -204.5
+margin_top = -166.0
+margin_right = 204.5
+margin_bottom = -18.0
+text = "Back"
+scene = "res://Levels/StartScreen.tscn"
+
+[node name="0" parent="." instance=ExtResource( 6 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 59.0
+margin_top = -74.0
+margin_right = 212.0
+margin_bottom = 74.0
+text = "01"
+scene = "res://Levels/LevelTest.tscn"
+
+[node name="1" parent="." instance=ExtResource( 6 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 243.0
+margin_top = -74.0
+margin_right = 396.0
+margin_bottom = 74.0
+text = "02"
+scene = "res://Levels/Level2.tscn"
+
+[node name="2" parent="." instance=ExtResource( 6 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 427.0
+margin_top = -74.0
+margin_right = 580.0
+margin_bottom = 74.0
+text = "03"
+scene = "res://Levels/Level3.tscn"
+
+[node name="3" parent="." instance=ExtResource( 6 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 610.0
+margin_top = -74.0
+margin_right = 763.0
+margin_bottom = 74.0
+text = "04"
+scene = "res://Levels/Level4.tscn"
+
+[node name="4" parent="." instance=ExtResource( 6 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 801.0
+margin_top = -74.0
+margin_right = 954.0
+margin_bottom = 74.0
+text = "05"
+scene = "res://Levels/Level5.tscn"
+
+[node name="5" parent="." instance=ExtResource( 6 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 985.0
+margin_top = -74.0
+margin_right = 1138.0
+margin_bottom = 74.0
+text = "06"
+scene = "res://Levels/Level6.tscn"
+
+[node name="6" parent="." instance=ExtResource( 6 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 1170.0
+margin_top = -74.0
+margin_right = 1323.0
+margin_bottom = 74.0
+text = "07"
+scene = "res://Levels/Level5.tscn"
